@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Main.css";
+import Avatar from "../../images/avatar.jpg";
 import Card from "./components/Card/Card.jsx";
 import Popup from "./components/Popup/Popup.jsx";
 import NewCard from "./components/Popup/components/NewCard/NewCard.jsx";
@@ -67,11 +67,7 @@ function Main() {
     <main className="content">
       <section className="profile page__section">
         <div className="profile__avatar-wrap">
-          <img
-            className="profile__image"
-            src="/images/avatar.jpg"
-            alt="Avatar"
-          />
+          <img className="profile__image" src={Avatar} alt="Avatar" />
           <button
             aria-label="Editar avatar"
             className="profile__avatar-edit-button"

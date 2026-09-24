@@ -1,4 +1,4 @@
-import "./Card.css";
+import "../../../../blocks/card.css";
 
 function Card(props) {
   const { card, onCardClick } = props;

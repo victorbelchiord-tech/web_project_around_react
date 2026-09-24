@@ -1,4 +1,4 @@
-import "./Popup.css";
+import "../../../../blocks/popup.css";
 
 function Popup(props) {
   // title e children vêm de quem abre o popup (ver Main.jsx)
