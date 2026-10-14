@@ -1,15 +1,15 @@
 import "../../../../blocks/popup.css";
 
 function Popup(props) {
-  // title e children vêm de quem abre o popup (ver Main.jsx)
-  const { onClose, title, children } = props;
+  // title, className e children vêm de quem abre o popup (ver Main.jsx)
+  const { onClose, title, className = "", children } = props;
 
   return (
     <div className="popup popup_is-opened">
       <div
         className={`popup__content ${
           !title ? "popup__content_content_image" : ""
-        }`}
+        } ${className}`}
       >
         <button
           aria-label="Fechar pop-up"

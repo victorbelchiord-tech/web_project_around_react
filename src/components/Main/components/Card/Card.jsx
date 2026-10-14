@@ -1,11 +1,23 @@
 import "../../../../blocks/card.css";
 
 function Card(props) {
-  const { card, onCardClick } = props;
+  const { card, onCardClick, onCardLike, onCardDelete } = props;
   const { name, link, isLiked } = card;
+
+  const cardLikeButtonClassName = `card__like-button ${
+    isLiked ? "card__like-button_is-active" : ""
+  }`;
 
   function handleClick() {
     onCardClick(card);
+  }
+
+  function handleLikeClick() {
+    onCardLike(card);
+  }
+
+  function handleDeleteClick() {
+    onCardDelete(card);
   }
 
   return (
@@ -20,15 +32,15 @@ function Card(props) {
         aria-label="Excluir cartão"
         className="card__delete-button"
         type="button"
+        onClick={handleDeleteClick}
       />
       <div className="card__description">
         <h2 className="card__title">{name}</h2>
         <button
           aria-label="Botão de curtir"
           type="button"
-          className={`card__like-button ${
-            isLiked ? "card__like-button_is-active" : ""
-          }`}
+          className={cardLikeButtonClassName}
+          onClick={handleLikeClick}
         />
       </div>
     </li>
